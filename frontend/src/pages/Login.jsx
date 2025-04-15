@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../store/auth";
-
+import API from "./api";
 const Login = () => {
   const [Data, setData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const Login = () => {
       if (Data.username === "" || Data.password === "") {
         alert("All fields are required");
       } else {
-        const response = await axios.post("http://localhost:1000/api/v1/log-in", Data);
+        const response = await API.post("http://localhost:1000/api/v1/log-in", Data);
         if (response.status === 200) {
           setData({ username: "", password: "" });
           alert("Successfully Logged In");
