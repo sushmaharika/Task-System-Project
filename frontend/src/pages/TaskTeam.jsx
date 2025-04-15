@@ -373,7 +373,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import API from "./api";
 const TaskTeam = () => {
   const [employees, setEmployees] = useState([]);
   const [selectedEmployees, setSelectedEmployees] = useState([]);
@@ -386,7 +386,7 @@ const TaskTeam = () => {
           id: localStorage.getItem("id"),
           authorization: `Bearer ${localStorage.getItem("token")}`,
         };
-        const response = await axios.get('http://localhost:1000/api/v3/employees', { headers });
+        const response = await API.get('http://localhost:1000/api/v3/employees', { headers });
         setEmployees(response.data);
       } catch (error) {
         console.error('Error fetching employees:', error);
