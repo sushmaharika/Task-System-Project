@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
+import API from "./api";
 const Signup = () => {
   const [Data, setData] = useState({ username: "", email: "", password: "", role: "employee" });
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Signup = () => {
       if (!Data.username || !Data.email || !Data.password) {
         alert("All fields are required");
       } else {
-        const response = await axios.post("http://localhost:1000/api/v1/sign-up", Data);
+        const response = await API.post("http://localhost:1000/api/v1/sign-up", Data);
         if (response.status === 200) {
           setData({ username: "", email: "", password: "", role: "employee" });
           alert("Successfully Signed Up");
