@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import axios from "axios";
-
+import API from '../api'
 const InputData = ({ toggleInputModal, setTasks, updatedTask, setUpdatedTask }) => {
   // State to manage form data
   const [formData, setFormData] = useState({ title: "", desc: "" });
@@ -30,7 +30,7 @@ const InputData = ({ toggleInputModal, setTasks, updatedTask, setUpdatedTask }) 
     try {
       if (updatedTask) {
         // Update an existing task
-        const response = await axios.put(
+        const response = await API.put(
           `http://localhost:1000/api/v2/update-task/${updatedTask._id}`,
           formData,
           { headers }
@@ -47,7 +47,7 @@ const InputData = ({ toggleInputModal, setTasks, updatedTask, setUpdatedTask }) 
         }
       } else {
         // Create a new task
-        const response = await axios.post(
+        const response = await API.post(
           "http://localhost:1000/api/v2/create-task",
           formData,
           { headers }
