@@ -84,7 +84,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "../components/Home/Cards";
 import axios from "axios";
 import InputData from "../components/Home/InputData";
-import API from "./api";
+import API from "../api";
 const CompletedTasks = () => {
   const [tasks, setTasks] = useState([]);
   const [isInputVisible, setInputVisible] = useState(false);
