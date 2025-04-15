@@ -8,7 +8,7 @@ const AdminAPI = require("./routes/admin");
 const cors = require("cors");
 
 app.use(cors({
-  origin: ["https://task-system-project-jpju-sushmaharikas-projects.vercel.app/signup"],
+  origin: ["https://task-system-project-ia53-sushmaharikas-projects.vercel.app/signup"],
   credentials: true
 }));
 
