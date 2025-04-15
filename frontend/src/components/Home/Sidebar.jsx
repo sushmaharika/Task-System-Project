@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import axios from "axios";
-import API from '../api'
+import API from '../../api'
 const Sidebar = ({ isAdmin }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
