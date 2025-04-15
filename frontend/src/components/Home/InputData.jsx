@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import axios from "axios";
-import API from '../api'
+import API from '../../api'
 const InputData = ({ toggleInputModal, setTasks, updatedTask, setUpdatedTask }) => {
   // State to manage form data
   const [formData, setFormData] = useState({ title: "", desc: "" });
