@@ -68,6 +68,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../components/Home/Cards";
 import InputData from "../components/Home/InputData";
+import API from "./api";
 
 const AdminDashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -81,7 +82,7 @@ const AdminDashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:1000/api/v2/get-tasks-with-users", { headers });
+      const response = await API.get("http://localhost:1000/api/v2/get-tasks-with-users", { headers });
       setTasks(response.data);
       localStorage.setItem("tasks", JSON.stringify(response.data));
     } catch (error) {
