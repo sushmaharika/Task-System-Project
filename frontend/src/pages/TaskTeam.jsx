@@ -373,7 +373,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import API from "./api";
+import API from "../api";
 const TaskTeam = () => {
   const [employees, setEmployees] = useState([]);
   const [selectedEmployees, setSelectedEmployees] = useState([]);
