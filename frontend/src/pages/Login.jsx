@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../store/auth";
-import API from "./api";
+import API from "../api";
 const Login = () => {
   const [Data, setData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
