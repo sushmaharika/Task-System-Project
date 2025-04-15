@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js",
-    "build":"echo 'Backend build'"
-  },
+"main": "app.js",
+"scripts": {
+  "start": "node app.js",
+  "build": "echo 'Backend build'"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
