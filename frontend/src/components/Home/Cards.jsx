@@ -96,7 +96,7 @@ import { CiHeart } from "react-icons/ci";
 import { MdEdit, MdDelete } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import axios from "axios";
-
+import API from '../api'
 const Cards = ({ tasks = [], toggleInputModal, setTasks, setUpdatedTask }) => {
   const headers = {
     id: localStorage.getItem("id"),
@@ -110,7 +110,7 @@ const Cards = ({ tasks = [], toggleInputModal, setTasks, setUpdatedTask }) => {
           ? `http://localhost:1000/api/v2/update-imp-task/${id}`
           : `http://localhost:1000/api/v2/update-complete-task/${id}`;
 
-      const response = await axios.put(url, {}, { headers });
+      const response = await API.put(url, {}, { headers });
       if (response.status === 200) {
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
@@ -127,7 +127,7 @@ const Cards = ({ tasks = [], toggleInputModal, setTasks, setUpdatedTask }) => {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:1000/api/v2/delete-task/${id}`, { headers });
+      await API.delete(`http://localhost:1000/api/v2/delete-task/${id}`, { headers });
       setTasks((prevTasks) => {
         const updatedTasks = prevTasks.filter((task) => task._id !== id);
         localStorage.setItem("tasks", JSON.stringify(updatedTasks));
