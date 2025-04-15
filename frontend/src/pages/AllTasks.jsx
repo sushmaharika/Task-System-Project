@@ -770,7 +770,7 @@ import { IoAddCircleSharp } from "react-icons/io5";
 import InputData from "../components/Home/InputData";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import API from "./api";
+import API from "../api";
 const AllTasks = () => {
   const [isInputVisible, setInputVisible] = useState(false);
   const [tasks, setTasks] = useState([]);
