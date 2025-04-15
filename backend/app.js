@@ -2,12 +2,16 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 require("./conn/conn");
-const cors = require("cors");
 const UserAPI = require("./routes/user");
 const TaskAPI = require("./routes/tasks");
 const AdminAPI = require("./routes/admin");
+const cors = require("cors");
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://task-system-project-jpju-sushmaharikas-projects.vercel.app/signup"],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use("/api/v1", UserAPI);
 app.use("/api/v2", TaskAPI);
