@@ -84,7 +84,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "../components/Home/Cards";
 import axios from "axios";
 import InputData from "../components/Home/InputData";
-
+import API from "./api";
 const CompletedTasks = () => {
   const [tasks, setTasks] = useState([]);
   const [isInputVisible, setInputVisible] = useState(false);
@@ -99,7 +99,7 @@ const CompletedTasks = () => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:1000/api/v2/get-complete-tasks", { headers });
+      const response = await API.get("http://localhost:1000/api/v2/get-complete-tasks", { headers });
       setTasks(response.data);
       localStorage.setItem("tasks", JSON.stringify(response.data));
     } catch (error) {
