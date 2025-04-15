@@ -96,7 +96,7 @@ import { CiHeart } from "react-icons/ci";
 import { MdEdit, MdDelete } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import axios from "axios";
-import API from '../api'
+import API from '../../api'
 const Cards = ({ tasks = [], toggleInputModal, setTasks, setUpdatedTask }) => {
   const headers = {
     id: localStorage.getItem("id"),
