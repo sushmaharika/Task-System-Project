@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import API from "./api";
 const AddEmployee = () => {
   const [employeeData, setEmployeeData] = useState({ username: '', email: '', password: '', role: 'employee' });
 
@@ -15,7 +15,7 @@ const AddEmployee = () => {
         id: localStorage.getItem("id"),
         authorization: `Bearer ${localStorage.getItem("token")}`,
       };
-      const response = await axios.post('http://localhost:1000/api/v3/add-employee', employeeData, { headers });
+      const response = await API.post('http://localhost:1000/api/v3/add-employee', employeeData, { headers });
       if (response.status === 200) {
         alert('Employee added successfully');
         setEmployeeData({ username: '', email: '', password: '', role: 'employee' });
