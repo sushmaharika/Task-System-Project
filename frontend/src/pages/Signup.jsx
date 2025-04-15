@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import API from "./api";
+import API from "../api";
 const Signup = () => {
   const [Data, setData] = useState({ username: "", email: "", password: "", role: "employee" });
   const navigate = useNavigate();
