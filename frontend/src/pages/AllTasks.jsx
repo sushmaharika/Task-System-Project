@@ -770,7 +770,7 @@ import { IoAddCircleSharp } from "react-icons/io5";
 import InputData from "../components/Home/InputData";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
+import API from "./api";
 const AllTasks = () => {
   const [isInputVisible, setInputVisible] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -787,7 +787,7 @@ const AllTasks = () => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:1000/api/v2/get-all-tasks", { headers });
+      const response = await API.get("http://localhost:1000/api/v2/get-all-tasks", { headers });
       setTasks(response.data);
       localStorage.setItem("tasks", JSON.stringify(response.data));
     } catch (error) {
