@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import axios from "axios";
-
+import API from '../api'
 const Sidebar = ({ isAdmin }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Sidebar = ({ isAdmin }) => {
           id: localStorage.getItem("id"),
           authorization: `Bearer ${localStorage.getItem("token")}`,
         };
-        const response = await axios.get("http://localhost:1000/api/v1/user-details", { headers });
+        const response = await API.get("http://localhost:1000/api/v1/user-details", { headers });
         setUserDetails(response.data);
       } catch (error) {
         console.error("Error fetching user details:", error);
