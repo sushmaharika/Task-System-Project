@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import API from "./api";
+import API from "../api";
 const AddEmployee = () => {
   const [employeeData, setEmployeeData] = useState({ username: '', email: '', password: '', role: 'employee' });
 
